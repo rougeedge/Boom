@@ -24,5 +24,4 @@ void ch (char a, char b, char c, int n)
         printf ("%c -> %c\n", a, b);
         ch (c, b, a, n-1);
     }
-    return 'a';
 }
