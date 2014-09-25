@@ -22,7 +22,7 @@ int main()
     scanf("%d", &j1);
     printf("Enter k1:\n");
     scanf("%d", &k1);
-    Q a={real1, i1, j1, k1};
+    Q a= {real1, i1, j1, k1};
 
     printf("Enter real2:\n");
     scanf("%d", &real2);
@@ -32,10 +32,10 @@ int main()
     scanf("%d", &j2);
     printf("Enter k2:\n");
     scanf("%d", &k2);
-    Q b={real2, i2, j2, k2};
+    Q b= {real2, i2, j2, k2};
 
     int command;
-    printf("1: +\n2: -\n3: *");
+    printf("1: +\n2: -\n3: *\n");
     scanf("%d", &command);
 
     switch (command)
@@ -76,6 +76,12 @@ void minus (Q a, Q b)
 
 void definition (Q a, Q b)
 {
+    int resultReal, resultI, resultJ, resultK;
 
-    printf("Result = %d+%di+%dj+%dk", a.real, a.i, a.j, a.k);
+    resultReal=a.real*b.real-a.i*b.i-a.j*b.j-a.k*b.k;
+    resultI=a.real*b.i+a.i*b.real+a.j*b.k-a.k*b.j;
+    resultJ=a.real*b.j-a.i*b.k+b.real*a.j+a.k*b.i;
+    resultK=a.real*b.k+a.i*b.j-a.j*b.i+a.k*b.real;
+
+    printf("Result = %d+%di+%dj+%dk", resultReal, resultI, resultJ, resultK);
 }
